@@ -1,11 +1,12 @@
 const router = require("express").Router();
 const campaign = require("../models/campaign");
+const { verifyToken } = require("../validation");
 
 //CRUD operations
 
 // /api/campaigns/
 //Create campaign - post
-router.post("/", (req, res) => {
+router.post("/", verifyToken, (req, res) => {
     data = req.body;
 
     campaign.insertMany(data)
@@ -29,7 +30,7 @@ router.get("/:id", (req, res) => {
 });
 
 //Update specific campaign - put
-router.put("/:id", (req, res) => {
+router.put("/:id", verifyToken, (req, res) => {
     const id = req.params.id;
 
     campaign.findByIdAndUpdate(id, req.body)
@@ -47,7 +48,7 @@ router.put("/:id", (req, res) => {
 });
 
 //Delete specific campaign - delete
-router.delete("/:id", (req, res) => {
+router.delete("/:id", verifyToken, (req, res) => {
     const id = req.params.id;
 
     campaign.findByIdAndDelete(id)

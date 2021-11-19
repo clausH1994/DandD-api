@@ -6,6 +6,7 @@ const app = express();
 
 //imports
 const campaignRoutes = require("./routes/campaign");
+const authRoutes = require("./routes/auth");
 //const forumRoutes = require("./routes/forum");
 //const userRoutes = require("./routes/user");
 
@@ -13,6 +14,7 @@ require("dotenv-flow").config();
 
 //parse request of content-type JSON
 app.use(bodyParser.json());
+app.use("/api/user", authRoutes);
 //route
 
 
