@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 
 
 
-describe('/test collection Forum', function () {
+describe('/test collection Forum', () => {
     it('should verify 0 forum ', (done) => {
         chai.request(server)
             .get('/api/forums')

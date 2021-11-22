@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 
 
 
-describe('/test collection Campaign', function () {
+describe('/test collection Campaign', () => {
     it('should verify 0 campaign ', (done) => {
         chai.request(server)
             .get('/api/campaigns')
