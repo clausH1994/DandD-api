@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-Parser');
+const bodyParser = require('body-parser');
 const campaign = require('./models/campaign');
 const app = express();
 
@@ -26,6 +26,7 @@ app.use(function(req, res, next) {
   
 //parse request of content-type JSON
 app.use(bodyParser.json());
+
 app.use("/api/user", authRoutes);
 //route
 
