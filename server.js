@@ -23,6 +23,7 @@ app.use(function(req, res, next) {
     
   });
 
+  
 //parse request of content-type JSON
 app.use(bodyParser.json());
 app.use("/api/user", authRoutes);
