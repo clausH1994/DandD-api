@@ -10,7 +10,6 @@ const registerValidation = (data) => {
             password: Joi.string().min(6).max(255).required(),
         }
     );
-
     return schema.validate(data);
 }
 

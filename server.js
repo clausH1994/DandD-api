@@ -7,7 +7,8 @@ const app = express();
 //imports
 const campaignRoutes = require("./routes/campaign");
 const authRoutes = require("./routes/auth");
-//const forumRoutes = require("./routes/forum");
+const forumRoutes = require("./routes/forum");
+const userRoutes = require("./routes/user");
 //const userRoutes = require("./routes/user");
 
 require("dotenv-flow").config();
@@ -31,6 +32,10 @@ mongoose.connection.once("open", () => console.log('connected succesfully to mon
 
 //post, put, delete -> CRUD
 app.use("/api/campaigns", campaignRoutes);
+
+app.use("/api/forums", forumRoutes);
+
+app.use("/api/users", userRoutes)
 
 const PORT = process.env.PORT || 4000;
 
