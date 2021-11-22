@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 
 
 
-describe('/test collection', function () {
+describe('/test collection User', function () {
     it('should verify 0 user ', (done) => {
         chai.request(server)
             .get('/api/forums')
