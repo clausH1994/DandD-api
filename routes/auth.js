@@ -64,7 +64,7 @@ router.post("/login", async (req, res) => {
         return res.status(400).json({ error: "Email and Password does not match" });
     }
 
-    //create authentication token with username and id
+    //create authentication token with email and id
     const token = jwt.sign
         (
             //payload

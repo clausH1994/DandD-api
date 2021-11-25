@@ -39,10 +39,10 @@ let userSchema = new Schema(
             type:String,
         },
         class:{
-            type:String,
+            type:Array,
         },
         setting:{
-            type:String,
+            type:Array,
         },
     }
 );
