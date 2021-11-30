@@ -29,7 +29,7 @@ router.get("/:id", (req, res) => {
 });
 
 //Update specific user - put
-router.put("/:id", verifyToken, async (req, res) => {
+router.put("/:id", async (req, res) => {
     const id = req.params.id;
 
     //hash password
