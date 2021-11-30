@@ -35,8 +35,8 @@ let userSchema = new Schema(
         zipcode:{
             type:Number,
         },
-        role:{
-            type:String,
+        roles:{
+            type:Array,
         },
         class:{
             type:Array,
