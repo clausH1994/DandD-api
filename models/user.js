@@ -38,7 +38,7 @@ let userSchema = new Schema(
         roles:{
             type:Array,
         },
-        class:{
+        classes:{
             type:Array,
         },
         setting:{
