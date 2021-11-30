@@ -82,7 +82,8 @@ router.post("/login", async (req, res) => {
     res.header("auth-token", token).json({
         error: null,
         token,
-        id: user._id
+        id: user._id,
+        user: user
     });
 });
 
