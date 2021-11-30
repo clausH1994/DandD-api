@@ -32,13 +32,6 @@ router.get("/:id", (req, res) => {
 router.put("/:id", async (req, res) => {
     const id = req.params.id;
 
-    //hash password
-    const salt = await bcrypt.genSalt(10);
-    const password = await bcrypt.hash(req.body.password, salt);
-
-    req.body.password = password;
-
-
     User.findByIdAndUpdate(id, req.body)
         .then(data => {
             if (!data) {
