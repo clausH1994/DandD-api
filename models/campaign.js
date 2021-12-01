@@ -16,8 +16,9 @@ let campaignSchema = new Schema(
         maxPlayer: {type:Number},
         ownerID: {type:String},
         ownerName: {type:String},
-
-    
+        private:  {type:Boolean},
+        online:  {type:Boolean},
+        
         wishedClasses: {type:Array},
         dates: {type:Array},
         listOfPlayers: {type:Array},
