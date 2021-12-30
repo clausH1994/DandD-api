@@ -32,6 +32,19 @@ router.get("/:id", (req, res) => {
 router.put("/:id", async (req, res) => {
     const id = req.params.id;
 
+    //checks if user already exists
+    if (req.body.username != null) {
+        const userExists = await User.findOne({ username: req.body.username })
+
+        //throw error if user already exists
+        if (userExists) {
+            return res.status(400).json({ error: "Username already exists" });
+        }
+    }
+
+
+
+
     User.findByIdAndUpdate(id, req.body)
         .then(data => {
             if (!data) {
